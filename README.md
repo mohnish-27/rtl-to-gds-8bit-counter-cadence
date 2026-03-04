@@ -1,78 +1,74 @@
-RTL-to-GDS-8bit-Counter-Using-Cadence
+# RTL-to-GDS-8bit-Counter-Using-Cadence
+
 A complete RTL-to-GDSII implementation of an 8-bit synchronous counter using the Cadence ASIC design toolchain. The project demonstrates the full digital ASIC flow from Verilog RTL and functional verification to synthesis, physical design, and final GDSII generation.
 
-Project Overview
-This project showcases an end-to-end ASIC implementation flow of a synchronous 8-bit counter. The design is written in synthesizable Verilog, verified using simulation, constrained with SDC timing definitions, synthesized into a gate-level netlist, and physically implemented through placement, clock tree synthesis, routing, and layout generation.
+---
 
-The objective is to demonstrate hands-on experience with industry-standard ASIC methodology and tool automation using TCL scripting.
+# Project Overview
 
-System Architecture
-Verilog RTL (counter.v) → Functional Simulation → SDC Constraints → Logic Synthesis → Physical Design → GDSII Output
+This project demonstrates a complete ASIC RTL-to-GDSII implementation flow of an 8-bit synchronous counter using industry-standard Cadence EDA tools:
 
-Design Description
-8-Bit Counter
-Type: Synchronous binary up-counter
+RTL Simulation – Cadence Incisive
 
-Range: Counts from 0 to 255
+Logic Synthesis – Cadence Genus
 
-Trigger: Positive clock edge
+Physical Design – Cadence Innovus
 
-Reset: Support included
+The design is implemented from:
 
-Implementation: D flip-flops and increment logic
+**RTL Design** → **Functional Verification** → **SDC Constraints** → **Synthesis** → **Physical Design** → **Routing** → **GDSII Generation**
 
-Tech Stack
-EDA Tools
-Cadence Incisive: Functional Verification
+---
 
-Cadence Genus: Logic Synthesis
+# About the 8-Bit Counter
 
-Cadence Innovus: Physical Design
+The design implements a synchronous 8-bit binary up-counter that:
 
-Design & Implementation
-Verilog HDL
+Counts from 0 to 255 (8-bit range)
 
-SDC (Synopsys Design Constraints)
+Increments on every positive clock edge
 
-TCL scripting
+Supports reset functionality
 
-Static Timing Analysis (STA)
+Demonstrates sequential digital design principles
 
-ASIC Design Flow
-RTL Design
-Synthesizable Verilog implementation (counter.v)
+## Key Design Concepts
 
-Modular and ASIC-friendly coding style
+D Flip-Flop based register implementation
 
-Functional Verification
-Dedicated testbench (counter_test.v)
+Synchronous sequential logic
 
-Waveform validation and behavioral correctness
+Clock-driven state transitions
 
-Timing Constraints
-SDC file (constraints_sdc.sdc)
+Binary increment logic
 
-Clock definition and timing environment configuration
+Reset handling
 
-Enables accurate Static Timing Analysis (STA)
+Timing constraints and analysis
 
-Logic Synthesis
-RTL → Gate-level netlist
+---
 
-Timing-driven optimization
+# Folder Structure
 
-Area and slack analysis; report generation
-
-Physical Design
-Floorplanning and standard cell placement
-
-Clock Tree Synthesis (CTS) and Routing
-
-Timing closure and DRC checks
-
-GDSII generation (counter.gds)
-
-Automation
-TCL scripting (rcscript.tcl)
-
-Flow control and repeatability via tool command aut
+```text
+├── rtl/
+│   └── counter.v
+│
+├── testbench/
+│   └── counter_test.v
+│
+├── constraints/
+│   └── constraints_sdc.sdc
+│
+├── scripts/
+│   └── rcscript.tcl
+│
+├── gds/
+│   └── counter.gds
+│
+├── results/
+│   └── images/
+│
+└── README.md
+```
+---
