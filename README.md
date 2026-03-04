@@ -1,130 +1,35 @@
 RTL-to-GDS-8bit-Counter-Using-Cadence
-
 A complete RTL-to-GDSII implementation of an 8-bit synchronous counter using the Cadence ASIC design toolchain. The project demonstrates the full digital ASIC flow from Verilog RTL and functional verification to synthesis, physical design, and final GDSII generation.
 
 Project Overview
-
 This project showcases an end-to-end ASIC implementation flow of a synchronous 8-bit counter. The design is written in synthesizable Verilog, verified using simulation, constrained with SDC timing definitions, synthesized into a gate-level netlist, and physically implemented through placement, clock tree synthesis, routing, and layout generation.
 
 The objective is to demonstrate hands-on experience with industry-standard ASIC methodology and tool automation using TCL scripting.
 
 System Architecture
-
 Verilog RTL (counter.v) → Functional Simulation → SDC Constraints → Logic Synthesis → Physical Design → GDSII Output
-
-Tools Used:
-
-Cadence Incisive – Functional Verification
-
-Cadence Genus – Logic Synthesis
-
-Cadence Innovus – Physical Design
 
 Design Description
 8-Bit Counter
+Type: Synchronous binary up-counter
 
-Synchronous binary up-counter
+Range: Counts from 0 to 255
 
-Counts from 0 to 255
+Trigger: Positive clock edge
 
-Triggered on positive clock edge
+Reset: Support included
 
-Reset support included
-
-Implemented using D flip-flops and increment logic
-
-ASIC Design Flow
-RTL Design
-
-Synthesizable Verilog implementation (counter.v)
-
-Modular and ASIC-friendly coding style
-
-Functional Verification
-
-Dedicated testbench (counter_test.v)
-
-Waveform validation
-
-Behavioral correctness verification
-
-Timing Constraints
-
-SDC file (constraints_sdc.sdc)
-
-Clock definition
-
-Timing environment configuration
-
-Enables accurate Static Timing Analysis (STA)
-
-Logic Synthesis
-
-RTL → Gate-level netlist
-
-Timing-driven optimization
-
-Area and slack analysis
-
-Report generation
-
-Physical Design
-
-Floorplanning
-
-Standard cell placement
-
-Clock Tree Synthesis (CTS)
-
-Routing
-
-Timing closure
-
-DRC checks
-
-GDSII generation (counter.gds)
-
-Automation
-
-TCL scripting (rcscript.tcl)
-
-Flow control and repeatability
-
-Tool command automation
-
-rtl-to-gds-8bit-counter/
-│
-├── rtl/
-│   └── counter.v
-│
-├── testbench/
-│   └── counter_test.v
-│
-├── constraints/
-│   └── constraints_sdc.sdc
-│
-├── scripts/
-│   └── rcscript.tcl
-│
-├── gds/
-│   └── counter.gds
-│
-├── results/
-│   └── images/
-│
-└── README.md
+Implementation: D flip-flops and increment logic
 
 Tech Stack
 EDA Tools
+Cadence Incisive: Functional Verification
 
-Cadence Incisive
+Cadence Genus: Logic Synthesis
 
-Cadence Genus
-
-Cadence Innovus
+Cadence Innovus: Physical Design
 
 Design & Implementation
-
 Verilog HDL
 
 SDC (Synopsys Design Constraints)
@@ -133,48 +38,41 @@ TCL scripting
 
 Static Timing Analysis (STA)
 
-ASIC Physical Design Flow
+ASIC Design Flow
+RTL Design
+Synthesizable Verilog implementation (counter.v)
 
-Key Features
+Modular and ASIC-friendly coding style
 
-Complete RTL-to-GDSII ASIC implementation
+Functional Verification
+Dedicated testbench (counter_test.v)
 
-Industry-standard EDA tool usage
+Waveform validation and behavioral correctness
 
-Constraint-driven synthesis
+Timing Constraints
+SDC file (constraints_sdc.sdc)
 
-Timing-aware physical implementation
+Clock definition and timing environment configuration
 
-Automation using TCL scripts
+Enables accurate Static Timing Analysis (STA)
 
-Fabrication-ready GDS output
+Logic Synthesis
+RTL → Gate-level netlist
 
-Structured and modular project organization
+Timing-driven optimization
 
-Applications
+Area and slack analysis; report generation
 
-Digital timing circuits
+Physical Design
+Floorplanning and standard cell placement
 
-Frequency division systems
+Clock Tree Synthesis (CTS) and Routing
 
-Event counting applications
+Timing closure and DRC checks
 
-Address generation in processors
+GDSII generation (counter.gds)
 
-Control logic blocks in ASIC/SoC designs
+Automation
+TCL scripting (rcscript.tcl)
 
-Embedded and industrial digital systems
-
-Future Enhancements
-
-Add enable and up/down control functionality
-
-Parameterize bit-width (N-bit scalable counter)
-
-Perform power optimization and clock gating
-
-Multi-corner multi-mode timing analysis
-
-Integrate into a small SoC subsystem
-
-Compare PPA (Power, Performance, Area) with alternative counter architectures
+Flow control and repeatability via tool command aut
