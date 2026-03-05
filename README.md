@@ -20,6 +20,14 @@ The design is implemented from:
 
 ---
 
+<h2 align="center">System Block Diagram</h2>
+
+<p align="center">
+  <img src="docs/block_diagram.png" width="700">
+</p>
+
+---
+
 ## About the 8-Bit Counter
 
 The design implements a synchronous 8-bit binary up-counter that:
