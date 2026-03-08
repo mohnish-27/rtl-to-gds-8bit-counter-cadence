@@ -85,7 +85,7 @@ When the reset signal becomes 0, the counter immediately resets to 00000000 rega
 
 The counter uses 8 D-type flip-flops to store the current count value. Each flip-flop represents one bit of the counter state, enabling a counting range from 0 to 255.
 
-Combinational Arithmetic Logic
+### Combinational Arithmetic Logic
 
 The increment and decrement operations are implemented using combinational arithmetic logic that determines the next state of the counter based on the current state and the control signal.
 
